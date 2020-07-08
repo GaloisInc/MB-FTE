@@ -1,0 +1,21 @@
+# For Command Line Interface
+click==8.1.3
+
+# For arithmetic calculations
+numpy==1.23.5
+
+# For Crypto related modules
+pycryptodome==3.18.0
+
+# For regular expressions
+regex==2023.5.5
+
+# For GPT based language models
+transformers==4.29.2
+torch==2.0.1
+
+# For fixed point calculations
+fixedint==0.2.0
+
+# For generating the documentation
+Sphinx==7.1.0

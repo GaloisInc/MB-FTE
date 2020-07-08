@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mbfte"
+version = "1.0.0"
+authors = [
+    { name = "Galois, Inc." },
+]
+description = "Implementation of model-based format-transforming encryption"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"

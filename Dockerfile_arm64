@@ -1,0 +1,20 @@
+FROM arm64v8/ubuntu
+
+RUN apt update -y
+RUN apt install python3 -y
+RUN apt install python3.10-venv -y
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+WORKDIR /usr/src/MB-FTE
+
+# First copy `deps.txt` so if the rest of the code changes we don't need to
+# rebuild everything.
+COPY ./deps.txt .
+
+RUN pip install --no-cache-dir -r deps.txt
+
+# Now copy the rest of it.
+COPY . .
