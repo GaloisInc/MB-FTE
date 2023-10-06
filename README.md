@@ -14,7 +14,7 @@ aforementioned paper! In particular, there are two key differences:
 - We provide two arithmetic encoding algorithms, both of which differ from the
   one presented in the paper. The first approach encodes into a variable-width
   integer, and the second approach encodes into a fixed-width integer. See
-  `mbfte/mbfte.py` for details.
+  `mbfte/textcover.py` for details.
 
 ## Setup
 
