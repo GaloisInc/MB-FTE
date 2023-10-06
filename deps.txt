@@ -7,9 +7,6 @@ numpy==1.23.5
 # For Crypto related modules
 pycryptodome==3.18.0
 
-# For regular expressions
-regex==2023.5.5
-
 # For GPT based language models
 transformers==4.29.2
 torch==2.0.1
