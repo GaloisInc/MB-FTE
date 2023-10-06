@@ -86,7 +86,7 @@ def roundtrip(
     decode_time = end - start
 
     _logger.info("Decoding covertext with wrong model")
-    start = time()  # This skips the time it takes for computing the various indices.
+    start = time()
     ok2 = model2.check(covertext)
     end = time()
     bad_check_time = end - start

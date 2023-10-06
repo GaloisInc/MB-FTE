@@ -46,9 +46,41 @@ run the following to print useful help information.
     > python mbfte.py --help
 
 In order to run the script on anything useful, you'll need a `pytorch` model.
-Examples of these can be found in the `butkuscoremodels` repo. Alternatively,
-for `pytorch` you can use the default pretrained model by passing `--model-dir
-PRETRAINED`.
+You can use the default pretrained model by passing `--model-dir PRETRAINED`
+(this is the default).
+
+### Examples
+
+#### Benchmarking
+
+The following command runs 10 iterations of the full encode-decode cycle for
+plaintexts of length 10.
+
+    > python mbfte.py benchmark --length 10 --ntrials 10
+
+#### Encoding
+
+The following command encodes a message using a "random" key and no random
+padding. The key is a hex-encoded 128-bit key.
+
+    > python mbfte.py --padding 0 encode "secret message" \
+        "c960efce6667ec5ca16851425a4619aa096ec8cb143d83eac3d4fc271be3a626"
+
+#### Decoding
+
+The following command decodes the covertext produced by the above command.
+
+    > python mbfte.py --padding 0 decode \
+        " SVG Twitch streamed CCT incredible debut \"The World Chosing Prevention: How Lethal" \
+        "c960efce6667ec5ca16851425a4619aa096ec8cb143d83eac3d4fc271be3a626"
+
+#### Encoding + Decoding
+
+The following command runs the full encode-decode cycle using a "random" key and
+no random padding.
+
+    > python mbfte.py --padding 0 encode-decode "secret message" \
+        "c960efce6667ec5ca16851425a4619aa096ec8cb143d83eac3d4fc271be3a626"
 
 ### Running on an ARM64 docker container
 
